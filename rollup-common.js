@@ -552,15 +552,16 @@ export function litProdConfig({
         ]
       : []),
     // CDN bundles
-    ...bundled.map(({file, output, name, format, sourcemapPathTransform}) =>
-      litMonoBundleConfig({
-        file,
-        output,
-        name,
-        terserOptions,
-        format,
-        sourcemapPathTransform,
-      })
+    ...bundled.map(
+      ({file, output, name, format, terserOptions, sourcemapPathTransform}) =>
+        litMonoBundleConfig({
+          file,
+          output,
+          name,
+          terserOptions,
+          format,
+          sourcemapPathTransform,
+        })
     ),
   ];
 }

@@ -360,3 +360,6 @@ packages/labs/test-projects/test-element-a/**/*.js.map
 
 packages/localize/testdata/
 packages/localize/examples/
+
+
+*.min.js
