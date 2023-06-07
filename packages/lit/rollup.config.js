@@ -29,12 +29,12 @@ const makeRelativeToPackagesDir = (relativeSourcePath, sourcemapPath) => {
 };
 
 const terserOptions = {
-  compress: false,
-  mangle: false,
+  compress: true,
+  mangle: true,
   format: {
     comments: false,
-    beautify: true,
-    indent_level: 2,
+    // beautify: true,
+    // indent_level: 2,
   },
 };
 
@@ -84,6 +84,9 @@ export default litProdConfig({
   bundled: [
     {
       file: 'polyfill-support',
+      output: 'polyfill-support.window.min',
+      format: 'iife',
+      terserOptions,
     },
     {
       file: 'index',
